@@ -1,0 +1,40 @@
+.workspaceFrame {
+    position: relative;
+    display: flex;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-lighter-color);
+    border-radius: 1em;
+    padding: 0 0.6em;
+    margin: 0 0.6em;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+.workspace {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4em 0.6em;
+    margin: 0 0.2em;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.focusIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.workspaceName {
+    z-index: 2;
+}
