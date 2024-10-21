@@ -15,15 +15,15 @@ const strengthToIcon = (strength: number) => {
 }
 
 interface NetworkProps {
-    output: NetworkOutput;
+    output: NetworkOutput | null;
     showName?: boolean;
 }
 
 const WiFi: React.FC<NetworkProps> = ({ output, showName = true }) => {
     return (
     <div className={styles.wifi} >
-        <div className={`${styles.wifiStrength} nf ${strengthToIcon(output.defaultGateway?.signalStrength || 0)}`} />
-        {showName && <p className={styles.wifiName}>{output.defaultGateway?.ssid}</p>}
+        <div className={`${styles.wifiStrength} nf ${strengthToIcon(output?.defaultGateway?.signalStrength || 0)}`} />
+        {showName && <p className={styles.wifiName}>{output?.defaultGateway?.ssid}</p>}
     </div>
     );
 }
@@ -42,9 +42,7 @@ const Network = ({ showName = true }: { showName?: boolean }) => {
         });
     }, []);
 
-    if (!output) return <></>;
-
-    const Component = output.defaultInterface?.type === 'wifi' ? WiFi : Ethernet;
+    const Component = output?.defaultInterface?.type === 'wifi' ? WiFi : Ethernet;
 
     return <Component output={output} showName={showName} />;
 };
