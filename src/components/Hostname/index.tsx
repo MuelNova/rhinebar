@@ -1,20 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { createProvider } from 'zebar';
+import { createProviderGroup } from 'zebar';
 import styles from './Hostname.module.scss';
 
-const Provider = createProvider({type: 'host'});
+const Providers = createProviderGroup({
+    host: {type: 'host'},
+    glazewm: {type: 'glazewm'},
+});
 
 const Hostname = () => {
-    const [output, setOutput] = useState(Provider.output);
+    const [outputMap, setOutputMap] = useState(Providers.outputMap);
 
     useEffect(() => {
-        Provider.onOutput(() => setOutput(Provider.output));
+        Providers.onOutput(() => setOutputMap(Providers.outputMap));
     }, []);
+
+    const getWorkspaceOrProcess = () => {
+        const focusedWorkspace = outputMap.glazewm?.focusedWorkspace;
+        const focusedContainer = outputMap.glazewm?.focusedContainer;
+        if (focusedContainer && focusedContainer.type === 'window' && focusedContainer.hasFocus) {
+            return focusedContainer.title;
+        } else if (focusedWorkspace) {
+            return 'Workspace ' + focusedWorkspace.name;
+        }
+        return '~';
+    }
 
     return (
     <div className={styles.hostname}>
-        <p>{output?.hostname || 'Unknown'}</p>
-        <p>{output?.friendlyOsVersion || 'Unknown'}</p>
+        <p>{outputMap.host?.hostname || 'Unknown'}</p>
+        <p>{getWorkspaceOrProcess()}</p>
     </div>
     );
 }

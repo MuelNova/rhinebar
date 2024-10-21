@@ -6,10 +6,15 @@
     position: absolute;
     top: 10%;
     left: 1.5%;
+    max-width: 30%;
+    overflow: hidden;
     
     p {
         margin: 0;
         padding: 0;
+        white-space: nowrap;
+        text-overflow: clip;
+        overflow: hidden;
 
         &:nth-child(1) {
             font-size: 0.8rem;
