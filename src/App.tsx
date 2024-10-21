@@ -3,6 +3,7 @@ import CPU from './components/CPU';
 import Background from './components/Background';
 import GlazeWMWorkspace from './components/GlazeWMWorkspace';
 import Hostname from './components/Hostname';
+import Media from './components/Media';
 import './App.scss';
 
 const App: React.FC = () => {
@@ -13,6 +14,7 @@ const App: React.FC = () => {
           <Background />
           <div className="bar-overlay">
             <Hostname />
+            <Media />
             <GlazeWMWorkspace />
             <CPU />
           </div>
