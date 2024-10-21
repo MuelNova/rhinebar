@@ -23,3 +23,7 @@ Enable it from zebar
 
 ## Config
 > Not yet implemented xD
+
+## My Config
+
+See [win_dotfiles](https://github.com/MuelNova/win_dotfiles)
