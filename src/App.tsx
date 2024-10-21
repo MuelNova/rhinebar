@@ -5,6 +5,8 @@ import GlazeWMWorkspace from './components/GlazeWMWorkspace';
 import Hostname from './components/Hostname';
 import Media from './components/Media';
 import Network from './components/Network';
+import Date from './components/Date';
+
 import styles from './App.module.scss';
 import './App.scss';
 
@@ -19,6 +21,9 @@ const App: React.FC = () => {
             <Hostname />
             <Media />
             <GlazeWMWorkspace />
+            <div className={styles.date}>
+              <Date />
+            </div>
             <CPU />
             {/* Done */}
             <div className={styles.network}>

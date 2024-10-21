@@ -11,4 +11,32 @@
       color: var(--color-accent-primary);
     }
   
-  }
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    font-size: 0.7rem;
+
+    padding: 0 0.6em;
+    // ToDo: Modify it after other components are refactored
+    margin: 0 0.6em 0 0;
+    border-radius: 1em;
+    box-sizing: border-box;
+    background-color: var(--color-bg-light);
+
+    color: var(--color-text-primary);
+
+    > div {
+        // Time
+        > p:nth-child(1) {
+            &::after {
+                content: '·';
+                font-weight: bold;
+                margin: 0 0.1em;
+            }
+        }
+    }
+}
