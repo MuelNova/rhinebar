@@ -4,12 +4,12 @@
     height: 80%;
     align-items: center;
     justify-content: center;
-    background-color: var(--background-lighter-color);
+    background-color: var(--color-bg-light);
     border-radius: 1em;
     padding: 0 0.6em;
     margin: 0 0.6em;
     box-sizing: border-box;
-    color: var(--text-color);
+    color: var(--color-text-primary);
 }
 
 .workspace {
@@ -29,7 +29,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: var(--color-accent-primary);
     border-radius: 50%;
     transition: all 0.3s ease;
     z-index: 0;

@@ -3,7 +3,7 @@
     height: 80%;
     align-items: center;
     justify-content: center;
-    background-color: var(--background-lighter-color);
+    background-color: var(--color-bg-light);
     border-radius: 1em;
     padding: 0 0.6em;
     box-sizing: border-box;
@@ -12,14 +12,14 @@
     .percentage {
         font-size: 1.2em;
         font-weight: bold;
-        color: var(--text-color);
+        color: var(--color-text-primary);
         align-self: center;
     }
   
     .iconContainer {
         width: 1.875em;
         height: 1.875em;
-        background-color: var(--background-darker-color);
+        background-color: var(--color-bg-dark);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -30,7 +30,7 @@
         .cpuIcon {
             width: 60%;
             height: 60%;
-            fill: var(--primary-color);
+            fill: var(--color-accent-primary);
         }
 
         .cpuCircle {
@@ -40,7 +40,7 @@
             width: 100%;
             height: 100%;
             fill: none;
-            stroke: var(--primary-color);
+            stroke: var(--color-accent-primary);
             stroke-width: 0.1875em;
             stroke-linecap: round;
             transform: rotate(-90deg);

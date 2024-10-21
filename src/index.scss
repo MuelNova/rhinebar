@@ -1,9 +1,31 @@
 :root {
-  --background-color: #E9E5F4;
-  --background-lighter-color: #F0EEF6;
-  --background-darker-color: #E2E0F9;
-  --text-color: #6B7280;
-  --primary-color: #1e1e1e;
+  // 背景色系列
+  --color-bg-main: #E9E5F4;        // 主背景色
+  --color-bg-light: #F0EEF6;       // 亮色背景
+  --color-bg-dark: #E2E0F9;        // 暗色背景
+  
+  // 文本色系列
+  --color-text-primary: #6B7280;   // 主要文本色
+  --color-text-secondary: #9CA3AF; // 次要文本色
+  --color-text-muted: #D1D5DB;     // 淡化文本色
+  
+  // 强调色系列
+  --color-accent-primary: #1e1e1e; // 主要强调色
+  --color-accent-secondary: #4B5563; // 次要强调色
+  
+  // 交互色系列
+  --color-interactive-hover: #C7D2FE; // 悬停状态色
+  --color-interactive-active: #818CF8; // 激活状态色
+  
+  // 边框色系列
+  --color-border-light: #E5E7EB;   // 浅色边框
+  --color-border-dark: #D1D5DB;    // 深色边框
+  
+  // 状态色系列
+  --color-success: #10B981;        // 成功状态色
+  --color-warning: #F59E0B;        // 警告状态色
+  --color-error: #EF4444;          // 错误状态色
+  --color-info: #3B82F6;           // 信息状态色
 }
 
 @font-face {
