@@ -1,0 +1,14 @@
+.network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    font-size: 0.7rem;
+    position: absolute;
+    right: 1.5%;
+
+    > div:first-child {
+      color: var(--color-accent-primary);
+    }
+  
+  }
