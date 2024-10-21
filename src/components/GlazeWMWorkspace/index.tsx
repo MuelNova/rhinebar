@@ -44,6 +44,15 @@ const GlazeWMWorkspace = () => {
                     <p>{workspace.name}</p>
                 </div>
             ))}
+            <div 
+                className={styles.tilingDirection + 
+                    ' nf ' + 
+                    (output?.tilingDirection === 'vertical' ?
+                         'nf-md-swap_vertical' : 'nf-md-swap_horizontal')} 
+                onClick={() => {
+                    output?.runCommand('toggle-tiling-direction');
+                }}
+            />
             <div ref={focusIndicatorRef} className={styles.focusIndicator}></div>
         </div>
     );

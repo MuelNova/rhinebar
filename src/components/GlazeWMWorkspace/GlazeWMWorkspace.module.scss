@@ -29,7 +29,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--color-accent-primary);
+    background-color: var(--color-interactive-hover);
     border-radius: 50%;
     transition: all 0.3s ease;
     z-index: 0;
@@ -37,4 +37,14 @@
 
 .workspaceName {
     z-index: 2;
+}
+
+.tilingDirection {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1;
 }
