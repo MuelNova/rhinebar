@@ -18,7 +18,7 @@ const Hostname = () => {
         const focusedWorkspace = outputMap.glazewm?.focusedWorkspace;
         const focusedContainer = outputMap.glazewm?.focusedContainer;
         if (focusedContainer && focusedContainer.type === 'window' && focusedContainer.hasFocus) {
-            return focusedContainer.title;
+            return focusedContainer.title === '' ? '~' : focusedContainer.title;
         } else if (focusedWorkspace) {
             return 'Workspace ' + focusedWorkspace.name;
         }
