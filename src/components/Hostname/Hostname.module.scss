@@ -1,0 +1,26 @@
+.hostname {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 1.5%;
+    
+    p {
+        margin: 0;
+        padding: 0;
+
+        &:nth-child(1) {
+            font-size: 0.8rem;
+            color: var(--color-text-primary);
+        }
+    
+        &:nth-child(2) {
+            font-size: 0.9rem;
+            // font-weight: bold;
+            color: var(--color-accent-primary);
+            margin-top: -0.2rem;
+        }
+    }
+}
