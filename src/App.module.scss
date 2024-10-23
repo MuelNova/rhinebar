@@ -22,14 +22,14 @@
 
     padding: 0 0.6em;
     // ToDo: Modify it after other components are refactored
-    margin: 0 0.6em 0 0;
+    margin: 0 0.6em;
     border-radius: 1em;
     box-sizing: border-box;
     background-color: var(--color-bg-light);
 
     color: var(--color-text-primary);
 
-    > div {
+    > *:first-child {
         // Time
         > p:nth-child(1) {
             &::after {
@@ -39,4 +39,10 @@
             }
         }
     }
+
+    .battery {
+        margin-left: 1em;
+        height: 100%;
+    }
 }
+

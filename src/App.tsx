@@ -6,6 +6,7 @@ import Hostname from './components/Hostname';
 import Media from './components/Media';
 import Network from './components/Network';
 import Date from './components/Date';
+import Battery from './components/Battery';
 
 import styles from './App.module.scss';
 import './App.scss';
@@ -23,6 +24,9 @@ const App: React.FC = () => {
             <GlazeWMWorkspace />
             <div className={styles.date}>
               <Date />
+              <div className={styles.battery}>
+                <Battery />
+              </div>
             </div>
             <CPU />
             {/* Done */}
