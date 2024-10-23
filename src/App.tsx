@@ -1,15 +1,15 @@
-import React from 'react';
-import CPU from './components/CPU';
-import Background from './components/Background';
-import GlazeWMWorkspace from './components/GlazeWMWorkspace';
-import Hostname from './components/Hostname';
-import Media from './components/Media';
-import Network from './components/Network';
-import Date from './components/Date';
-import Battery from './components/Battery';
+import React from "react";
+import CPU from "./components/CPU";
+import Background from "./components/Background";
+import GlazeWMWorkspace from "./components/GlazeWMWorkspace";
+import Hostname from "./components/Hostname";
+import Media from "./components/Media";
+import Network from "./components/Network";
+import Date from "./components/Date";
+import Battery from "./components/Battery";
 
-import styles from './App.module.scss';
-import './App.scss';
+import styles from "./App.module.scss";
+import "./App.scss";
 
 const App: React.FC = () => {
   return (
@@ -31,13 +31,13 @@ const App: React.FC = () => {
             <CPU />
             {/* Done */}
             <div className={styles.network}>
-              <Network showName={false}/>
+              <Network showName={false} />
             </div>
           </div>
         </div>
       </header>
     </div>
   );
-}
+};
 
 export default App;

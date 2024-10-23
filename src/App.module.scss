@@ -1,48 +1,46 @@
 .network {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-    font-size: 0.7rem;
-    position: absolute;
-    right: 1.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  font-size: 0.7rem;
+  position: absolute;
+  right: 1.5%;
 
-    > div:first-child {
-      color: var(--color-accent-primary);
-    }
-  
+  > div:first-child {
+    color: var(--color-accent-primary);
+  }
 }
 
 .date {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-    font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  font-size: 0.7rem;
 
-    padding: 0 0.6em;
-    // ToDo: Modify it after other components are refactored
-    margin: 0 0.6em;
-    border-radius: 1em;
-    box-sizing: border-box;
-    background-color: var(--color-bg-light);
+  padding: 0 0.6em;
+  // ToDo: Modify it after other components are refactored
+  margin: 0 0.6em;
+  border-radius: 1em;
+  box-sizing: border-box;
+  background-color: var(--color-bg-light);
 
-    color: var(--color-text-primary);
+  color: var(--color-text-primary);
 
-    > *:first-child {
-        // Time
-        > p:nth-child(1) {
-            &::after {
-                content: '·';
-                font-weight: bold;
-                margin: 0 0.1em;
-            }
-        }
+  > *:first-child {
+    // Time
+    > p:nth-child(1) {
+      &::after {
+        content: "·";
+        font-weight: bold;
+        margin: 0 0.1em;
+      }
     }
+  }
 
-    .battery {
-        margin-left: 1em;
-        height: 100%;
-    }
+  .battery {
+    margin-left: 1em;
+    height: 100%;
+  }
 }
-
