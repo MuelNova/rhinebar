@@ -31,9 +31,7 @@ const Battery = () => {
         );
       case "full":
         return (
-          <div
-            className={`${styles.battery} nf nf-md-battery_charging_100`}
-          ></div>
+          <div className={`${styles.battery} nf nf-md-lightning_bolt`}></div>
         );
     }
     return <></>;
