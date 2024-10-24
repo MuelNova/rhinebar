@@ -44,3 +44,15 @@
     height: 100%;
   }
 }
+
+.memory {
+  margin-left: 0.6em;
+  display: flex;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-light);
+  border-radius: 1em;
+  padding: 0 0.6em;
+  box-sizing: border-box;
+}

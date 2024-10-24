@@ -7,7 +7,7 @@ import Media from "./components/Media";
 import Network from "./components/Network";
 import Date from "./components/Date";
 import Battery from "./components/Battery";
-
+import Memory from "./components/Memory";
 import styles from "./App.module.scss";
 import "./App.scss";
 
@@ -29,6 +29,9 @@ const App: React.FC = () => {
               </div>
             </div>
             <CPU />
+            <div className={styles.memory}>
+              <Memory fixed={0} />
+            </div>
             {/* Done */}
             <div className={styles.network}>
               <Network showName={false} />
