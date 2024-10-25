@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createProvider } from "zebar";
+import CircularProgress from "../common/CircularProgress";
 import styles from "./Memory.module.scss";
 
 const Provider = createProvider({ type: "memory" });
@@ -20,26 +21,6 @@ const Memory = ({
   const [output, setOutput] = useState(Provider.output);
 
   useEffect(() => Provider.onOutput(() => setOutput(Provider.output)));
-
-  const Circle = () => {
-    const radius: number = 15;
-    const circumference: number = 2 * Math.PI * radius;
-    const offset: number = output
-      ? circumference * (1 - output.usage / 100)
-      : 0;
-
-    return (
-      <svg className={styles.memoryCircle} viewBox="0 0 32 32">
-        <circle
-          cx="16"
-          cy="16"
-          r={radius}
-          strokeDasharray={`${circumference} ${circumference}`}
-          strokeDashoffset={offset}
-        />
-      </svg>
-    );
-  };
 
   const toReadableBytes = (bytes: number) => {
     let value: number;
@@ -69,17 +50,16 @@ const Memory = ({
 
   return (
     <div className={styles.memory}>
-      <span>
+      <span className={styles.percentage}>
         {output
           ? showDetail
             ? toReadableBytes(output?.usedMemory!)
             : toReadableUsage(output?.usage!)
           : ""}
       </span>
-      <div className={styles.memoryIconContainer}>
-        <div className={`${styles.memoryIcon} nf nf-fa-memory`}></div>
-        <Circle />
-      </div>
+      <CircularProgress percentage={output?.usage ?? 0}>
+        <div className="nf nf-fa-memory" />
+      </CircularProgress>
     </div>
   );
 };
