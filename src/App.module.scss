@@ -1,11 +1,21 @@
-.network {
+.barItem {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80%;
   font-size: 0.7rem;
+  padding: 0 0.6em;
+  border-radius: 1em;
+  box-sizing: border-box;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
+}
+
+.network {
+  @extend .barItem;
   position: absolute;
   right: 1.5%;
+  background-color: transparent;
 
   > div:first-child {
     color: var(--color-accent-primary);
@@ -13,23 +23,10 @@
 }
 
 .date {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80%;
-  font-size: 0.7rem;
-
-  padding: 0 0.6em;
-  // ToDo: Modify it after other components are refactored
+  @extend .barItem;
   margin: 0 0.6em;
-  border-radius: 1em;
-  box-sizing: border-box;
-  background-color: var(--color-bg-light);
-
-  color: var(--color-text-primary);
 
   > *:first-child {
-    // Time
     > p:nth-child(1) {
       &::after {
         content: "·";
@@ -41,18 +38,15 @@
 
   .battery {
     margin-left: 1em;
-    height: 100%;
   }
 }
 
 .memory {
+  @extend .barItem;
   margin-left: 0.6em;
-  display: flex;
-  height: 80%;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-bg-light);
-  border-radius: 1em;
-  padding: 0 0.6em;
-  box-sizing: border-box;
+}
+
+.cpu {
+  @extend .barItem;
+  margin-left: 0.6em;
 }

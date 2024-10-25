@@ -28,7 +28,9 @@ const App: React.FC = () => {
                 <Battery />
               </div>
             </div>
-            <CPU />
+            <div className={styles.cpu}>
+              <CPU />
+            </div>
             <div className={styles.memory}>
               <Memory fixed={0} />
             </div>

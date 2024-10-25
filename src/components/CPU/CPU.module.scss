@@ -1,17 +1,10 @@
 .cpu {
   display: flex;
-  height: 80%;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-bg-light);
-  border-radius: 1em;
-  padding: 0 0.6em;
-  box-sizing: border-box;
-
-  .percentage {
+  > span {
     font-size: 1.2em;
     color: var(--color-text-primary);
-    align-self: center;
   }
 
   .iconContainer {
