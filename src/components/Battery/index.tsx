@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { createProvider } from "zebar";
+import React from "react";
+import { useProvider } from "../../hooks";
 import styles from "./Battery.module.scss";
 
-const Provider = createProvider({ type: "battery" });
-
 const Battery = () => {
-  const [output, setOutput] = useState(Provider.output);
-
-  useEffect(() => Provider.onOutput(() => setOutput(Provider.output)));
+  const output = useProvider("battery");
 
   const getComponent = () => {
     console.log(output);

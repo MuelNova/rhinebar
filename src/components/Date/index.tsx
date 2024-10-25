@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { format } from "date-fns";
-import { createProvider, DateOutput } from "zebar";
+import { DateOutput } from "zebar";
+import { useProvider } from "../../hooks";
 import styles from "./Date.module.scss";
-
-const Provider = createProvider({ type: "date" });
 
 interface DateProps {
   showTime?: boolean;
@@ -22,6 +21,7 @@ const Time: React.FC<GadgetProps> = ({
   use12Hours = false,
   showSeconds = false,
 }) => {
+  if (!output?.new) return <></>;
   const t = new Intl.DateTimeFormat("zh-CN", {
     hour12: use12Hours,
     hour: "2-digit",
@@ -31,25 +31,24 @@ const Time: React.FC<GadgetProps> = ({
   return <p className={styles.time}>{t.format(output?.new)}</p>;
 };
 
-const DateComponent: React.FC<GadgetProps> = ({
+const Date: React.FC<GadgetProps> = ({
   output,
   dateFormat = "EEEE, MM/dd",
 }) => {
+  if (!output?.new) return <></>;
   return (
-    <p className={styles.dateComponent}>{format(output?.new!, dateFormat)}</p>
+    <p className={styles.dateComponent}>{format(output?.new, dateFormat)}</p>
   );
 };
 
-const Date: React.FC<DateProps> = ({
+const DateComponent: React.FC<DateProps> = ({
   showTime = true,
   showSeconds = false,
   showDate = true,
   dateFormat = "EEEE,MM/dd",
   use12Hours = false,
 }) => {
-  const [output, setOutput] = useState(Provider.output);
-
-  useEffect(() => Provider.onOutput(() => setOutput(Provider.output)));
+  const output = useProvider("date");
 
   return (
     <div className={styles.date}>
@@ -60,9 +59,9 @@ const Date: React.FC<DateProps> = ({
           showSeconds={showSeconds}
         />
       )}
-      {showDate && <DateComponent output={output} dateFormat={dateFormat} />}
+      {showDate && <Date output={output} dateFormat={dateFormat} />}
     </div>
   );
 };
 
-export default Date;
+export default DateComponent;

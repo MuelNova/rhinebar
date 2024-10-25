@@ -1,4 +1,4 @@
-.barItem {
+@mixin barItem {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
 }
 
 .network {
-  @extend .barItem;
+  @include barItem;
   position: absolute;
   right: 1.5%;
   background-color: transparent;
@@ -23,7 +23,7 @@
 }
 
 .date {
-  @extend .barItem;
+  @include barItem;
   margin: 0 0.6em;
 
   > *:first-child {
@@ -42,11 +42,11 @@
 }
 
 .memory {
-  @extend .barItem;
+  @include barItem;
   margin-left: 0.6em;
 }
 
 .cpu {
-  @extend .barItem;
+  @include barItem;
   margin-left: 0.6em;
 }

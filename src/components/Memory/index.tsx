@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { createProvider } from "zebar";
+import React from "react";
+import { useProvider } from "../../hooks";
 import CircularProgress from "../common/CircularProgress";
 import styles from "./Memory.module.scss";
-
-const Provider = createProvider({ type: "memory" });
 
 interface MemoryProps {
   showDetail?: boolean;
@@ -18,9 +16,7 @@ const Memory = ({
   fixed = 1,
   showUnit = false,
 }: MemoryProps) => {
-  const [output, setOutput] = useState(Provider.output);
-
-  useEffect(() => Provider.onOutput(() => setOutput(Provider.output)));
+  const output = useProvider("memory");
 
   const toReadableBytes = (bytes: number) => {
     let value: number;

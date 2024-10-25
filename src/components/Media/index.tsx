@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { createProvider } from "zebar";
+import { useProvider } from "../../hooks";
 import styles from "./Media.module.scss";
 
-const Provider = createProvider({ type: "glazewm" });
-
 const Media = () => {
-  const [output, setOutput] = useState(Provider.output);
+  const output = useProvider("glazewm");
   const [mediaTitle, setMediaTitle] = useState("");
-
-  useEffect(() => {
-    Provider.onOutput(() => {
-      setOutput(Provider.output);
-    });
-  }, []);
 
   const getMediaInfo = () => {
     for (const workspace of output?.allWorkspaces || []) {

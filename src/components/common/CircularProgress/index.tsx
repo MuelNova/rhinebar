@@ -20,8 +20,8 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
       {children}
       <svg className={styles.circle} viewBox="0 0 32 32">
         <circle
-          cx="16"
-          cy="16"
+          cx={radius + 1}
+          cy={radius + 1}
           r={radius}
           strokeDasharray={circumference}
           strokeDashoffset={offset}

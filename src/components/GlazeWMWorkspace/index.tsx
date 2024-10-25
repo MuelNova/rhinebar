@@ -1,17 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-import { createProvider } from "zebar";
-
+import React, { useEffect, useRef } from "react";
+import { useProvider } from "../../hooks";
 import styles from "./GlazeWMWorkspace.module.scss";
 
-const GlazeWMProvider = createProvider({ type: "glazewm" });
-
 const GlazeWMWorkspace = () => {
-  const [output, setOutput] = useState(GlazeWMProvider.output);
+  const output = useProvider("glazewm");
   const focusIndicatorRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    GlazeWMProvider.onOutput(() => setOutput(GlazeWMProvider.output));
-  }, []);
 
   useEffect(() => {
     const focusedWorkspace = output?.focusedWorkspace;

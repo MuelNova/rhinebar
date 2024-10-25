@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { createProvider, NetworkOutput } from "zebar";
+import React from "react";
+import { NetworkOutput } from "zebar";
+import { useProvider } from "../../hooks";
 import styles from "./Network.module.scss";
-
-const Provider = createProvider({
-  type: "network",
-});
 
 const strengthToIcon = (strength: number) => {
   if (strength >= 85) return "nf-md-wifi_strength_4";
@@ -40,13 +37,7 @@ const Ethernet: React.FC<NetworkProps> = () => {
 };
 
 const Network = ({ showName = true }: { showName?: boolean }) => {
-  const [output, setOutput] = useState(Provider.output);
-
-  useEffect(() => {
-    Provider.onOutput(() => {
-      setOutput(Provider.output);
-    });
-  }, []);
+  const output = useProvider("network");
 
   const Component = output?.defaultInterface?.type === "wifi" ? WiFi : Ethernet;
 

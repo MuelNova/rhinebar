@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { createProviderGroup } from "zebar";
+import React from "react";
+import { useProvider } from "../../hooks";
 import styles from "./Hostname.module.scss";
 
-const Providers = createProviderGroup({
-  host: { type: "host" },
-  glazewm: { type: "glazewm" },
-});
-
 const Hostname = () => {
-  const [outputMap, setOutputMap] = useState(Providers.outputMap);
-
-  useEffect(() => {
-    Providers.onOutput(() => setOutputMap(Providers.outputMap));
-  }, []);
+  const outputMap = {
+    host: useProvider("host"),
+    glazewm: useProvider("glazewm"),
+  };
 
   const getWorkspaceOrProcess = () => {
     const focusedWorkspace = outputMap.glazewm?.focusedWorkspace;
