@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useProvider } from "../../hooks";
 import styles from "./Media.module.scss";
 
@@ -6,7 +6,7 @@ const Media = () => {
   const output = useProvider("glazewm");
   const [mediaTitle, setMediaTitle] = useState("");
 
-  const getMediaInfo = () => {
+  const getMediaInfo = useCallback(() => {
     for (const workspace of output?.allWorkspaces || []) {
       for (const window of workspace.children) {
         if (window.type === "window" && window.processName === "Spotify") {
@@ -15,11 +15,11 @@ const Media = () => {
       }
     }
     return "";
-  };
+  }, [output]);
 
   useEffect(() => {
     setMediaTitle(getMediaInfo());
-  }, [output]);
+  }, [getMediaInfo]);
 
   return (
     mediaTitle !== "" && (
