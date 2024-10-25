@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./CircularProgress.module.scss";
 
 interface CircularProgressProps {
@@ -12,8 +12,11 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
   radius = 15,
   children,
 }) => {
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference * (1 - percentage / 100);
+  const { circumference, offset } = useMemo(() => {
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference * (1 - percentage / 100);
+    return { circumference, offset };
+  }, [radius, percentage]);
 
   return (
     <div className={styles.circularProgress}>
