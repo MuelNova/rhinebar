@@ -1,11 +1,13 @@
+@import "./_variables.scss";
+
 @mixin barItem {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80%;
-  font-size: 0.7rem;
-  padding: 0 0.6em;
-  border-radius: 1em;
+  height: $bar-item-height;
+  font-size: $bar-item-font-size;
+  padding: $bar-item-padding;
+  border-radius: $bar-item-border-radius;
   box-sizing: border-box;
   background-color: var(--color-bg-light);
   color: var(--color-text-primary);
