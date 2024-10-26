@@ -50,3 +50,8 @@
   @include barItem;
   margin-left: 0.6em;
 }
+
+.workspace {
+  @include barItem;
+  height: 60%;
+}

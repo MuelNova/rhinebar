@@ -1,21 +1,15 @@
 .workspaceFrame {
   position: relative;
   display: flex;
-  height: 80%;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-bg-light);
-  border-radius: 1em;
-  padding: 0 0.6em;
-  margin: 0 0.6em;
   box-sizing: border-box;
-  color: var(--color-text-primary);
 }
 
 .workspace {
   position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.5em;
+  height: 1.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,11 +34,11 @@
 }
 
 .tilingDirection {
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 1;
 }

@@ -21,7 +21,9 @@ const App: React.FC = () => {
             {/* TODO: Refactor these components to be more flexible */}
             <Hostname />
             <Media />
-            <GlazeWMWorkspace />
+            <div className={styles.workspace}>
+              <GlazeWMWorkspace />
+            </div>
             <div className={styles.date}>
               <Date />
               <div className={styles.battery}>
