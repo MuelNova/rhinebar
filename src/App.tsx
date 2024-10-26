@@ -11,40 +11,58 @@ import Memory from "./components/Memory";
 import styles from "./App.module.scss";
 import "./App.scss";
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="bar">
-          <Background />
-          <div className="bar-overlay">
-            {/* TODO: Refactor these components to be more flexible */}
-            <Hostname />
-            <Media />
-            <div className={styles.workspace}>
-              <GlazeWMWorkspace />
-            </div>
-            <div className={styles.date}>
-              <Date />
-              <div className={styles.battery}>
-                <Battery />
-              </div>
-            </div>
-            <div className={styles.cpu}>
-              <CPU />
-            </div>
-            <div className={styles.memory}>
-              <Memory fixed={0} />
-            </div>
-            {/* Done */}
-            <div className={styles.network}>
-              <Network showName={false} />
-            </div>
-          </div>
-        </div>
-      </header>
+const LeftComponents = () => (
+  <div className="left">
+    <div className={styles.hostname}>
+      <Hostname />
     </div>
-  );
-};
+  </div>
+);
+
+const MiddleComponents = () => (
+  <div className="middle">
+    <div className={styles.media}>
+      <Media />
+    </div>
+    <div className={styles.workspace}>
+      <GlazeWMWorkspace />
+    </div>
+    <div className={styles.date}>
+      <Date />
+      <div className={styles.battery}>
+        <Battery />
+      </div>
+    </div>
+    <div className={styles.cpu}>
+      <CPU />
+    </div>
+    <div className={styles.memory}>
+      <Memory fixed={0} />
+    </div>
+  </div>
+);
+
+const RightComponents = () => (
+  <div className="right">
+    <div className={styles.network}>
+      <Network showName={false} />
+    </div>
+  </div>
+);
+
+const App: React.FC = () => (
+  <div className="App">
+    <header className="App-header">
+      <div className="bar">
+        <Background />
+        <div className="bar-overlay">
+          <LeftComponents />
+          <MiddleComponents />
+          <RightComponents />
+        </div>
+      </div>
+    </header>
+  </div>
+);
 
 export default App;

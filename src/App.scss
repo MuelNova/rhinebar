@@ -46,3 +46,32 @@
     box-sizing: border-box;
   }
 }
+
+.left,
+.middle,
+.right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.middle {
+  width: 50%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.left,
+.right {
+  width: 25%;
+}
+
+.left {
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.right {
+  justify-content: flex-end;
+}

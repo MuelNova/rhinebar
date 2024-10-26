@@ -13,8 +13,7 @@
 
 .network {
   @include barItem;
-  position: absolute;
-  right: 1.5%;
+  padding: 0;
   background-color: transparent;
 
   > div:first-child {
@@ -54,4 +53,14 @@
 .workspace {
   @include barItem;
   height: 60%;
+}
+
+.media {
+  @include barItem;
+  margin-right: 0.6em;
+}
+
+.hostname {
+  margin-left: 0.2em;
+  max-width: 100%;
 }

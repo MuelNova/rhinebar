@@ -1,12 +1,7 @@
 .media {
   display: flex;
-  height: 80%;
-  max-width: 20%;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-bg-light);
-  border-radius: 1em;
-  padding: 0 0.8em;
   box-sizing: border-box;
   text-overflow: clip;
   overflow: hidden;
