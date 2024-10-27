@@ -6,7 +6,6 @@ const Battery = () => {
   const output = useProvider("battery");
 
   const getComponent = () => {
-    console.log(output);
     switch (output?.state) {
       case "charging":
         return (
