@@ -21,15 +21,15 @@ const Media = () => {
     setMediaTitle(getMediaInfo());
   }, [getMediaInfo]);
 
+  if (mediaTitle === "") return null;
+
   return (
-    mediaTitle !== "" && (
-      <div className={styles.media}>
-        <div className={styles.mediaControl + " nf nf-oct-play"}></div>
-        <div className={styles.mediaInfo}>
-          <p>{mediaTitle}</p>
-        </div>
+    <div className={styles.media}>
+      <div className={styles.mediaControl + " nf nf-oct-play"}></div>
+      <div className={styles.mediaInfo}>
+        <p>{mediaTitle}</p>
       </div>
-    )
+    </div>
   );
 };
 
