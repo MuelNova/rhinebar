@@ -16,6 +16,7 @@ const Battery = () => {
           <div className={`${styles.battery}`}>
             <div
               className={`nf nf-md-battery_${
+                output.chargePercent < 10 ? 10 :
                 output.chargePercent - (output.chargePercent % 10)
               }`}
             ></div>
