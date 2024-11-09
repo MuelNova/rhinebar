@@ -3,7 +3,7 @@
   "zOrder": "normal",
   "shownInTaskbar": false,
   "focused": false,
-  "resizable": true,
+  "resizable": false,
   "transparent": true,
   "defaultPlacements": [
     {
@@ -11,7 +11,7 @@
       "offsetX": "0px",
       "offsetY": "0px",
       "width": "100%",
-      "height": "70px",
+      "height": "75px",
       "monitorSelection": {
         "type": "all"
       }
