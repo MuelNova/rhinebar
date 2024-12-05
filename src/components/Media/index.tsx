@@ -1,33 +1,39 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
+
 import { useProvider } from "../../hooks";
+import CircularProgress from "../common/CircularProgress";
 import styles from "./Media.module.scss";
 
 const Media = () => {
-  const output = useProvider("glazewm");
-  const [mediaTitle, setMediaTitle] = useState("");
+  const provider = useProvider("media");
+  const output = provider?.currentSession;
 
-  const getMediaInfo = useCallback(() => {
-    for (const workspace of output?.allWorkspaces || []) {
-      for (const window of workspace.children) {
-        if (window.type === "window" && window.processName === "Spotify") {
-          return window.title === "Spotify Premium" ? "" : window.title;
-        }
-      }
-    }
-    return "";
-  }, [output]);
+  if (output === null || output?.title === "") return null;
 
-  useEffect(() => {
-    setMediaTitle(getMediaInfo());
-  }, [getMediaInfo]);
+  const setPlaying = () => {
+    provider?.togglePlayPause();
+  };
 
-  if (mediaTitle === "") return null;
+  const percentage = ((output?.position ?? 0) / (output?.endTime ?? 1)) * 100;
 
   return (
-    <div className={styles.media}>
-      <div className={styles.mediaControl + " nf nf-oct-play"}></div>
+    <div className={styles.media} onClick={() => setPlaying()}>
+      <div className={styles.mediaControl}>
+        <CircularProgress
+          percentage={percentage}
+          background={false}
+          borderColor="var(--color-text-primary)"
+          strokeWidth="0.17em"
+        >
+          <div
+            className={`${styles.controlIcon} nf ${
+              output?.isPlaying ? "nf-fa-pause" : `nf-fa-play ${styles.playing}`
+            }`}
+          ></div>
+        </CircularProgress>
+      </div>
       <div className={styles.mediaInfo}>
-        <p>{mediaTitle}</p>
+        <p>{`${output?.title} - ${output?.artist}`}</p>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ const Providers = createProviderGroup({
   date: { type: "date" },
   glazewm: { type: "glazewm" },
   host: { type: "host" },
+  media: { type: "media" },
 });
 
 export function useProvider<T extends keyof (typeof Providers)["outputMap"]>(

@@ -58,10 +58,8 @@
 }
 
 .media {
-  > div {
-    @include barItem;
-    margin-right: 0.6em;
-  }
+  @include barItem;
+  margin-right: 0.6em;
 }
 
 .hostname {

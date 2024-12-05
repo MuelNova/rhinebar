@@ -4,12 +4,18 @@ import styles from "./CircularProgress.module.scss";
 interface CircularProgressProps {
   percentage: number;
   radius?: number;
+  background?: boolean;
+  borderColor?: string;
+  strokeWidth?: string;
   children?: React.ReactNode;
 }
 
 const CircularProgress: React.FC<CircularProgressProps> = ({
   percentage,
   radius = 15,
+  background = true,
+  borderColor = "var(--color-accent-primary)",
+  strokeWidth = "0.1875em",
   children,
 }) => {
   const { circumference, offset } = useMemo(() => {
@@ -19,7 +25,11 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
   }, [radius, percentage]);
 
   return (
-    <div className={styles.circularProgress}>
+    <div
+      className={`${styles.circularProgress} ${
+        background ? styles.circularProgressBackground : ""
+      }`}
+    >
       {children}
       <svg className={styles.circle} viewBox="0 0 32 32">
         <circle
@@ -28,6 +38,8 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
           r={radius}
           strokeDasharray={circumference}
           strokeDashoffset={offset}
+          stroke={borderColor}
+          strokeWidth={strokeWidth}
         />
       </svg>
     </div>

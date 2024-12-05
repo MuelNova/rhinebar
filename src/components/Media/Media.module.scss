@@ -6,18 +6,30 @@
   text-overflow: clip;
   overflow: hidden;
   white-space: nowrap;
+  height: 100%;
 
   .mediaInfo {
     font-size: 1.2em;
     // font-weight: bold;
     color: var(--color-text-primary);
     align-self: center;
+    margin-left: 0.2em;
   }
 
   .mediaControl {
     font-size: 1.5em;
-    font-weight: bold;
-    color: var(--color-text-primary);
-    margin-right: 0.3em;
+    z-index: 100;
+
+    .controlIcon {
+      color: var(--color-text-primary);
+    }
+
+    .playing {
+      margin-left: 0.1em;
+    }
+
+    > div {
+      width: 1.48em;
+    }
   }
 }

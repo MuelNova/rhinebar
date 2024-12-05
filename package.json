@@ -12,10 +12,10 @@
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "zebar": "^2.3.0"
+    "zebar": "^2.6.0"
   },
   "scripts": {
-    "start": "nodemon --watch src --exec 'yarn build && cp build/* /mnt/c/Users/nova/.glzr/zebar/rhinebarr/ -r'",
+    "start": "nodemon --watch src --exec 'yarn build && rm -rf /mnt/c/Users/nova/.glzr/zebar/rhinebar/* && cp -r build/* /mnt/c/Users/nova/.glzr/zebar/rhinebar/ -r'",
     "build": "react-scripts build",
     "serve": "serve -s build",
     "dev": "react-scripts start",
