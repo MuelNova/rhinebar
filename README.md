@@ -6,6 +6,16 @@ Yet Another [zebar](https://github.com/glzr-io/zebar) taskbar, with [GlazeWM](ht
 
 ![](docs/images/show1.png)
 
+## Download
+
+### dev
+
+from `artifacts` in [actions](actions/workflows/build.yml)
+
+### latest
+
+from [release](releases/latest)
+
 ## Installation
 
 ### From source
@@ -22,6 +32,7 @@ copy build ~/.glzr/zebar/rhinebar -r
 Enable it from zebar
 
 ## Config
+
 > Not yet implemented xD
 
 ## My Config
