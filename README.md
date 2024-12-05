@@ -10,11 +10,11 @@ Yet Another [zebar](https://github.com/glzr-io/zebar) taskbar, with [GlazeWM](ht
 
 ### dev
 
-from `artifacts` in [actions](actions/workflows/build.yml)
+from `artifacts` in [actions](https://github.com/MuelNova/rhinebar/actions/workflows/build.yml)
 
 ### latest
 
-from [release](releases/latest)
+from [release](https://github.com/MuelNova/rhinebar/releases/latest)
 
 ## Installation
 
