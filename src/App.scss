@@ -60,6 +60,10 @@
   flex: 1;
   align-items: center;
   justify-content: center;
+
+  > div {
+    min-width: 0;
+  }
 }
 
 .left,

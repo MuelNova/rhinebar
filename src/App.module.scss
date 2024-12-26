@@ -26,6 +26,7 @@
 .date {
   @include barItem;
   margin: 0 0.6em;
+  padding: 0 1.5em;
 
   > *:first-child {
     > p:nth-child(1) {
@@ -55,10 +56,17 @@
 .workspace {
   @include barItem;
   height: 60%;
+  padding: 0 1.2em;
+}
+
+.media:empty {
+  display: none;
 }
 
 .media {
   @include barItem;
+  flex: 1;
+  max-width: 100%;
   margin-right: 0.6em;
 }
 

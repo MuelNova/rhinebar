@@ -1,14 +1,16 @@
 .media {
   display: flex;
   align-items: center;
-  justify-content: center;
   box-sizing: border-box;
   text-overflow: clip;
   overflow: hidden;
   white-space: nowrap;
+  max-width: 100%;
   height: 100%;
 
   .mediaInfo {
+    max-width: 90%;
+    flex-shrink: 1;
     font-size: 1.2em;
     // font-weight: bold;
     color: var(--color-text-primary);
@@ -17,6 +19,8 @@
   }
 
   .mediaControl {
+    order: -1;
+    flex-shrink: 0;
     font-size: 1.5em;
     z-index: 100;
 
